@@ -1,3 +1,4 @@
+import CartWidget from "../CartWidget/CartWidget";
 export default function Navbar() {
 
 const headerStyle = {
@@ -36,6 +37,7 @@ listStyle: "none",
                 <li>Productos</li>
             </ul>
         </div>
+        <CartWidget count={1}/>
         </header>
     
     );
