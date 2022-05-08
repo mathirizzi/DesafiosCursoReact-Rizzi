@@ -1,3 +1,26 @@
-h1 {
-    color: red;
+.add-button-container{
+    display: inline-block;
+    text-align: center;
+}
+
+.add-button{
+    display: flex;
+}
+
+.itemlist-container{
+    display: inline-block;
+    background-color: rgba(200, 212, 223, 0.445);
+    padding: 5px;
+    margin-top: 10px;
+    box-shadow: 1px 1px 5px rgba(17, 17, 17, 0.479);
+    border: solid rgba(136, 123, 123, 0.479) 1px;
+}
+
+.itemlist-container h1{
+    color: black;
+    font-size: 15px;
+}
+
+.itemlist-container button{
+    margin: 3px;
 }
