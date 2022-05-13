@@ -21,6 +21,23 @@
     font-size: 15px;
 }
 
+
 .itemlist-container button{
     margin: 3px;
+}
+
+.item-list{
+    display: flex;
+    justify-content: space-between;
+}
+
+.item{
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.507);
+    margin: 4px;
+    text-align: center;
+}
+
+.item img{
+    width: 200px;
+    height: 200px;
 }
