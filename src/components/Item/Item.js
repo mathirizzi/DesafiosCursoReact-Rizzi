@@ -1,14 +1,16 @@
 import React from 'react'
-import AddButton from "../AddButton/AddButton";
+import { useNavigate } from "react-router-dom";
 const Item = ({producto}) => {
-    
+
+const navegar = useNavigate();    
+
 return (
     
 <div className="item">
     <img src={producto.img} alt={producto.name}/>
     <p>{producto.name}</p>
-    <p>{producto.description}</p>
-<AddButton stock={producto.stock}/>
+    <p>Categoria: {producto.category}</p>
+<button onClick={()=>navegar(`/detalle/${producto.id}`)}>Ver mas</button>
 </div>
 )
 }

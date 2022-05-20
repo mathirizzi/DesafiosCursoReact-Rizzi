@@ -1,24 +1,22 @@
 import React from "react";
+import { getProducts } from '../../mocks/fakeApi';
+import ItemDetail from '../ItemDetail/ItemDetail';
+import {useParams} from 'react-router-dom';
 
 export default function ItemDetailContainer() {
-  const [teclado, setTeclado] = React.useState([]);
+const [productDetail, setProductDetail] = React.useState([]);
+const { id } = useParams()
 
-  const getTeclado = new Promise((resolve, reject) => {
-    resolve();
-  }).then(() => {
-    console.log("getItem");
-  });
 
-  React.useEffect(() => {
-    fetch("https://api.mercadolibre.com/sites/MLA/search?q=teclados")
-      .then((response) => response.json())
-      .then((json) => setTeclado(json.results))
-      .catch((err) => console.error(err));
-  }, []);
+React.useEffect(() => {
+  getProducts
+  .then((res) => setProductDetail(res.find((item) => item.id === id)))
+  .catch((error) => console.log(error))
+}, [])
 
   return (
     <div className="ItemDetailContainer">
-      {teclado.map((item) => console.log({ item }))}
+    <ItemDetail productDetail={productDetail}/>
     </div>
   );
 }
