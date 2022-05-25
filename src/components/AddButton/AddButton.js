@@ -16,9 +16,10 @@ export default function AddButton ({stock}) {
         }
     }
 
-    const onSubmit = () => {
-        alert (`Se agregaron ${count} unidades al carrito`)
-    }
+
+    /* Variable de Estado */
+  const [action, setAction] = React.useState("comprar")
+
 
 /* Botones. */
 
@@ -30,20 +31,29 @@ export default function AddButton ({stock}) {
         )
     }
 
-    const AddButton = ({handleOnSubmit}) => {
-        return (
-            <button className="add-button" onClick={handleOnSubmit}>
-                Añadir al carrito
-            </button>
-        )
-    }
+   
+
+     const AddToCart = () => (
+    <button className="btn-info" onClick={()=> setAction("carrito")}>Añadir al carrito</button>
+  );
+
+
+    const GoToCart = () => (
+    <button className="btn-success" onClick={()=> alert("/carrito")}>Ir al carrito</button>
+  );
+
+  const Button = action === "comprar" ? AddToCart : GoToCart
+
+
+
 
     return(
         <div className="add-button-container">
         <StockButton text="-" handleOnClick={onDecrease}/>
         <span className="add-button-count">{count}</span>
         <StockButton text="+" handleOnClick={onAdd}/>
-        <AddButton handleOnSubmit={onSubmit}/>
+        <Button/>
+        
         </div>
     )
 }

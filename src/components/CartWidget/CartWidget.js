@@ -18,7 +18,7 @@ export default function CartWidget ({count}) {
 
     return(
         <div style={cartContainer}>
-            <img src="imgs/cart.png" alt="Icono del carrito" style={cartStyle}/>
+            <img src="/imgs/cart.png" alt="Icono del carrito" style={cartStyle}/>
             <div style={countStyle}>
             {count}
             </div>

@@ -48,9 +48,9 @@ listStyle: "none",
                    <Link to="/fetch">Fetch</Link>
                     </li>
                     <NavDropdown title="Categorias" id="basic-nav-dropdown">
-          <NavDropdown.Item href="/categoria/mordidagrande">Mordida grande</NavDropdown.Item>
-          <NavDropdown.Item href="/categoria/mordidamediana">Mordida mediana</NavDropdown.Item>
-          <NavDropdown.Item href="/categoria/mordidachica">Mordida chica</NavDropdown.Item>
+          <Link to="/categoria/mordidagrande">Mordida grande</Link>
+          <Link to="/categoria/mordidamediana">Mordida mediana</Link>
+          <Link to="/categoria/mordidachica">Mordida chica</Link>
 
         </NavDropdown>
             </ul>
