@@ -1,4 +1,10 @@
-export default function CartWidget ({count}) {
+import React from "react";
+import {Link} from 'react-router-dom';
+import {CartContext} from "../../context/CartContext";
+
+export default function CartWidget () {
+    const {cart} = React.useContext(CartContext);
+    
     const cartContainer = {
         display: "flex",
         justifyContent: "center",
@@ -9,19 +15,13 @@ export default function CartWidget ({count}) {
         width: "15%",
     }
 
-    const countStyle = {
-        display: "flex",
-        alignItems: "center",
-        fontSize: "30px",
-        color: "red",
-    }
 
     return(
         <div style={cartContainer}>
+            <Link to="/cart">
             <img src="/imgs/cart.png" alt="Icono del carrito" style={cartStyle}/>
-            <div style={countStyle}>
-            {count}
-            </div>
+            <span className="badge">{cart.lenght}</span>
+            </Link>
         </div>
     )
 }
