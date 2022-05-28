@@ -1,5 +1,5 @@
 import React from "react"
-export default function AddButton ({stock}) {
+export default function AddButton ({stock, onSubmit}) {
     const [count, setCount] = React.useState(1)
 
 /* Funciones Agregar, Disminuir y Añadir productos. */
@@ -32,7 +32,7 @@ export default function AddButton ({stock}) {
     }
 
    
-
+/*
      const AddToCart = () => (
     <button className="btn-info" onClick={()=> setAction("carrito")}>Añadir al carrito</button>
   );
@@ -43,16 +43,19 @@ export default function AddButton ({stock}) {
   );
 
   const Button = action === "comprar" ? AddToCart : GoToCart
-
+  */
+  const Button = ({handleOnSubmit}) => {
+    return <button className="btn-success m-2" onClick={() => handleOnSubmit()}>Añadir al carrito</button>;
+  };
 
 
 
     return(
-        <div className="add-button-container">
+        <div className="add-button-container d-inline-block">
         <StockButton text="-" handleOnClick={onDecrease}/>
         <span className="add-button-count">{count}</span>
         <StockButton text="+" handleOnClick={onAdd}/>
-        <Button/>
+        <Button handleOnSubmit={onSubmit}/>
         
         </div>
     )

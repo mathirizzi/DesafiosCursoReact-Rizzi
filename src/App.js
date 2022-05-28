@@ -1,12 +1,14 @@
 import React from "react"
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import {CartProvider} from "./context/CartContext"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Navbar from "./components/Navbar/Navbar";
-import {BrowserRouter, Routes, Route} from 'react-router-dom';
+
 import Home from './pages/Home'
 import Fetch from './components/Fetch/Fetch'
-import {CartProvider} from "./context/CartContext"
+
 import Cart from './pages/Cart';
 
 
@@ -15,8 +17,8 @@ function App() {
   
   return (
     <BrowserRouter>
-      <Navbar />
       <CartProvider>
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/productos" element={<ItemListContainer greeting={"Nuestro producto"}/>}/>
