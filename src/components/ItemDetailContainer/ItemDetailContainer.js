@@ -1,5 +1,5 @@
 import React from "react";
-import { getProducts } from '../../mocks/fakeApi';
+import {getFirestore, doc, getDoc} from "firebase/firestore"
 import ItemDetail from '../ItemDetail/ItemDetail';
 import {useParams} from 'react-router-dom';
 
@@ -9,10 +9,12 @@ const { id } = useParams()
 
 
 React.useEffect(() => {
-  getProducts
-  .then((res) => setProductDetail(res.find((item) => item.id === id)))
-  .catch((error) => console.log(error))
-}, [])
+  const db = getFirestore()
+  const productRef = doc(db, "productos", id);
+  getDoc(productRef).then((snapshot) => {
+      setProductDetail({ id: snapshot.id, ...snapshot.data()});
+  });
+}, [id]);
 
   return (
     <div className="ItemDetailContainer">
