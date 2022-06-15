@@ -1,3 +1,10 @@
+@import 'variables.scss';
+
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
 .add-button-container{
     display: inline-block;
     text-align: center;
@@ -40,4 +47,53 @@
 .item img{
     width: 200px;
     height: 200px;
+}
+
+.logo{
+    text-align: center;
+    text-decoration: none;
+    color: #4A2475;
+    font-size: 50px;
+      a{
+        text-decoration: none;
+        color: $color1;
+    }
+}
+
+.links{
+
+    li, a{
+        list-style-type: none;
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        color: $color1;
+        font-size: 25px;
+    }
+
+    a:hover{
+        color: $color2;
+    }
+}
+
+.header{
+    
+    
+}
+
+.cartWidget{
+
+    a{
+    font-size: 30px;
+    text-decoration: none;
+    color: $color1;
+        }
+    .cartWidget a:hover{
+        color: $color2;
+    }
+}
+
+
+.badge{
+    color: $color3;
 }

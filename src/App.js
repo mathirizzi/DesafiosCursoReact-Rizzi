@@ -12,8 +12,12 @@ import Fetch from './components/Fetch/Fetch'
 import Cart from './pages/Cart';
 
 
-function App() {
 
+
+function App() {
+  
+
+  
   
   return (
     <BrowserRouter>
