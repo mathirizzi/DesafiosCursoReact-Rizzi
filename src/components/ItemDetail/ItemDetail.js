@@ -4,21 +4,44 @@ import AddButton from '../AddButton/AddButton'
 import {CartContext} from "../../context/CartContext";
 
 const ItemDetail = ({productDetail}) => {
-  const {addToCart, deleteAll, removeFromCart} = React.useContext(CartContext);
+  const{title, description, price, id, img, stock}=productDetail
+  const [count, setCount] = React.useState(1)
+  const {addToCart} = React.useContext(CartContext);
     const volverProductos = useNavigate()
-    
+    const [compra, setCompra] = React.useState(false)
+
+    const onAdd =()=>{
+      const itemInCart ={
+        id,
+        img,
+        quantity: count,
+        stock,
+        title,
+        description,
+        price
+      }
+      addToCart(itemInCart)
+      setCompra(true)
+    } 
+   
+
+  
   return (
+
     <div className='justify-content-center border '>
-        <h2>Detalle del producto: {productDetail.name}</h2>
-        <img src={productDetail.img} alt={productDetail.name}/>
-        <p>{productDetail.description}</p>
-        <div className='border d-inline-block'>
-        <AddButton onSubmit={() => addToCart(productDetail)} initial={1} stock={productDetail.stock}/>
-        <button onClick={() => removeFromCart(productDetail)}>Restar producto del carrito</button>
-        <button onClick={() => deleteAll(productDetail)}>Borrar todo el carrito</button>
-        <button className='d-flex' onClick={() => volverProductos('/productos')}>Volver a Productos</button>
-        </div>
-        </div>
+    <img src={img} alt={title}/>
+    <h2>Titulo del producto: {title}</h2>
+    <p>{description}</p>
+    <p>Precio: $ {price}</p>
+    <div className='border d-inline-block'>
+    {compra ? <button onClick={()=>volverProductos('/cart')}>Ir al carrito</button>
+     : <AddButton onSubmit={onAdd} count={count} setCount={setCount} initial={1} stock={stock}/>}
+    <button className='d-flex' onClick={() => volverProductos('/productos')}>Volver a Productos</button>
+    </div>
+    </div>
+
+   
+        
   )
 }
 

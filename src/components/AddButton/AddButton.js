@@ -1,6 +1,5 @@
 import React from "react"
-export default function AddButton ({stock, onSubmit}) {
-    const [count, setCount] = React.useState(1)
+export default function AddButton ({stock, onSubmit, count, setCount}) {
 
 /* Funciones Agregar, Disminuir y Añadir productos. */
 
@@ -17,8 +16,7 @@ export default function AddButton ({stock, onSubmit}) {
     }
 
 
-    /* Variable de Estado */
-  const [action, setAction] = React.useState("comprar")
+  
 
 
 /* Botones. */
@@ -31,19 +29,7 @@ export default function AddButton ({stock, onSubmit}) {
         )
     }
 
-   
-/*
-     const AddToCart = () => (
-    <button className="btn-info" onClick={()=> setAction("carrito")}>Añadir al carrito</button>
-  );
 
-
-    const GoToCart = () => (
-    <button className="btn-success" onClick={()=> alert("/carrito")}>Ir al carrito</button>
-  );
-
-  const Button = action === "comprar" ? AddToCart : GoToCart
-  */
   const Button = ({handleOnSubmit}) => {
     return <button className="btn-success m-2" onClick={() => handleOnSubmit()}>Añadir al carrito</button>;
   };

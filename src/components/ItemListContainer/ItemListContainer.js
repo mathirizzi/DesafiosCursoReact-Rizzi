@@ -3,16 +3,16 @@ import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom';
 import { getFirestore, getDocs, collection, query, where } from "firebase/firestore"
 export default function ItemListContainer () {
-
+   
     const [listaProductos, setListaProductos]=useState([])
-    const { category } = useParams()
+    const { tipocategoria } = useParams()
 
     useEffect(() => {
         const db = getFirestore()
-        if (category) {
+        if (tipocategoria) {
             const q = query(
                 collection(db, "productos"),
-                where("category", "==", category)
+                where("category", "==", tipocategoria)
             );
             getDocs(q).then((snapshots) => {
                 if (snapshots.size === 0) {
@@ -29,8 +29,7 @@ export default function ItemListContainer () {
             setListaProductos(snapshots.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
         });
     }
-}, [category])
-    
+}, [tipocategoria])
     
     return(
         <div className="itemlist-container">

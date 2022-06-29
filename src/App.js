@@ -7,6 +7,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import Navbar from "./components/Navbar/Navbar";
 
 import Home from './pages/Home'
+import Checkout from './pages/Checkout'
 import Fetch from './components/Fetch/Fetch'
 
 import Cart from './pages/Cart';
@@ -30,6 +31,7 @@ function App() {
         <Route exact path="/detalle/:id" element={   <ItemDetailContainer/>}/>
         <Route exact path="/fetch" element={<Fetch/>}/>
         <Route exact path="/cart" element={<Cart/>}/>
+        <Route exact path="/checkout" element={<Checkout/>}/>
       </Routes>
       </CartProvider>         
     </BrowserRouter>
