@@ -1,6 +1,7 @@
 import React from "react";
 
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+import { Container, Card, Row, Col } from 'react-bootstrap';
 
 import { CartContext } from "../context/CartContext";
 
@@ -42,6 +43,8 @@ const Checkout = () => {
   };
 
   return (
+    <>
+    <Container>
     <div className="">
       {!orderId ? (
         <form onSubmit={handleSubmit}>
@@ -51,28 +54,32 @@ const Checkout = () => {
             required
             type="text"
             name="name"
-            placeholder="Name"
+            placeholder="Escribi tu nombre y apellido"
             onChange={handleChange}
           />
-
+<br></br>
           <input
             required
             type="email"
             name="email"
-            placeholder="Email"
+            placeholder="tucorreo@tucorreo.com"
             onChange={handleChange}
           />
 
+<br></br>
           <input
             required
             type="phone"
             name="phone"
-            placeholder="Phone"
             onChange={handleChange}
           />
 
+          <br></br>
+
           <input type="submit" value="Finalizar compra" />
         </form>
+   
+        
       ) : (
         <>
           <p>Muchas gracias por tu compra!</p>
@@ -85,6 +92,8 @@ const Checkout = () => {
         </>
       )}
     </div>
+    </Container>
+    </>
   );
 };
 

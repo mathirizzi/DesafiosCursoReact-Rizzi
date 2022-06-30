@@ -10,10 +10,10 @@ export default function CartWidget () {
     const {cartQuantity}  = React.useContext(CartContext);
 
     return(
-        <div className="cartWidget d-flex justify-content-center border">
+        <div className="cartWidget d-flex justify-content-center">
             <Link to="/cart">
-          <span className="cartIcon border">{cartIcon}</span>
-            <span className="badge border">{cartQuantity() || ''}</span>
+          <span className="cartIcon">{cartIcon}</span>
+            <span className="badge">{cartQuantity() || ''}</span>
             </Link>
         </div>
     )

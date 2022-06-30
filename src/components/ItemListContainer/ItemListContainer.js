@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ItemList from '../ItemList/ItemList'
 import { useParams } from 'react-router-dom';
 import { getFirestore, getDocs, collection, query, where } from "firebase/firestore"
+import { Container, Row } from 'react-bootstrap';
 export default function ItemListContainer () {
    
     const [listaProductos, setListaProductos]=useState([])
@@ -32,9 +33,14 @@ export default function ItemListContainer () {
 }, [tipocategoria])
     
     return(
+
         <div className="itemlist-container">
+            <Container fluid>
+                <Row>
             <h3>Lista de productos</h3>
             <ItemList listaProductos={listaProductos}/>
+            </Row>
+            </Container>
         </div>
         
     )

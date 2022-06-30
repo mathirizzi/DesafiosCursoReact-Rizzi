@@ -16,6 +16,7 @@
 
 .itemlist-container{
     display: inline-block;
+    text-align: center;
     background-color: rgba(200, 212, 223, 0.445);
     padding: 5px;
     margin-top: 10px;
@@ -76,9 +77,22 @@
     }
 }
 
-.header{
+.header , .footer{
+    background-image: linear-gradient(to right, #c396f711, #c396f746);
     
-    
+}
+
+
+
+.redes{
+    display: flex;
+    justify-content: center;
+    span{
+        font-size: 30px;
+        text-decoration: none;
+        color: $color1;
+        margin: 10px;
+            }  
 }
 
 .cartWidget{
@@ -96,4 +110,16 @@
 
 .badge{
     color: $color3;
+}
+
+.containerCartItem{
+    border: solid gray 1px;
+    width: 100%;
+    height: 200px;
+}
+
+.cardImg{
+        max-height: 200px;
+        max-width: 140px;
+    
 }

@@ -17,7 +17,7 @@ React.useEffect(() => {
 }, [id]);
 
   return (
-    <div className="ItemDetailContainer">
+    <div className="ItemDetailContainer d-flex justify-content-center mt-5">
     <ItemDetail productDetail={productDetail}/>
     </div>
   );

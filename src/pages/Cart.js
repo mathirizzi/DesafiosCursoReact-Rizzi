@@ -2,6 +2,7 @@ import React from "react";
 import { CartContext } from "../context/CartContext";
 import CartItem from '../components/CartItem/CartItem';
 import { useNavigate } from "react-router-dom";
+import { Container, Row, Col } from 'react-bootstrap';
 
 
 export default function Cart () {
@@ -10,9 +11,14 @@ export default function Cart () {
   const {totalCart} = React.useContext(CartContext);
   const navegar = useNavigate()
     return(
-      <div className="d-flex">
+      <Container>
+        <Row md={1} className="border">
+        <Col>
         <h1>Este es tu carrito</h1>
-        <div>
+        </Col>
+        </Row>
+        <Row md={1} className="border">
+        <div className="">
         {
           cart.length === 0
           ? cartVacio
@@ -24,7 +30,7 @@ export default function Cart () {
           </>
         }
         </div>
-        
-      </div>
+        </Row>
+      </Container>
     )
   }
