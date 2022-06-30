@@ -4,7 +4,7 @@ Bienvenidos a mi entrega final del curso de React JS de Coderhouse.
 
 ## Gif de proceso de compra
 
-gif
+![gif](https://raw.githubusercontent.com/mathirizzi/DesafiosCursoReact-Rizzi/master/public/imgs/cursoReactJs.gif)
 
 
 ## Instalacion
